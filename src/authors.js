@@ -6,7 +6,6 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  ImageInput,
   ImageField,
 } from "react-admin";
 
