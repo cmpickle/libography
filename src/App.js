@@ -17,6 +17,7 @@ const theme = createMuiTheme({
 const headers = {
   "content-type": "application/json",
   authorization: "bearer <token>",
+  "X-Hasura-Admin-Secret": "<secret>",
 };
 
 function App() {
