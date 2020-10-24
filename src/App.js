@@ -3,7 +3,13 @@ import "./App.css";
 import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
-import Person from "@material-ui/icons/Person";
+import {
+  Person,
+  Book,
+  Category,
+  CollectionsBookmark,
+  Collections,
+} from "@material-ui/icons";
 import { BookList, BookEdit, BookCreate } from "./books";
 import { AuthorList, AuthorEdit, AuthorCreate } from "./authors";
 import { createMuiTheme } from "@material-ui/core";
@@ -52,24 +58,28 @@ function App() {
       <Resource
         name="books"
         label="Books"
+        icon={Book}
         list={BookList}
         edit={BookEdit}
         create={BookCreate}
       />
       <Resource
         name="genre"
+        icon={Category}
         list={ListGuesser}
         edit={SeriesEdit}
         create={SeriesCreate}
       />
       <Resource
         name="series"
+        icon={CollectionsBookmark}
         list={ListGuesser}
         edit={SeriesEdit}
         create={SeriesCreate}
       />
       <Resource
         name="universe"
+        icon={Collections}
         list={ListGuesser}
         edit={EditGuesser}
         create={EditGuesser}
