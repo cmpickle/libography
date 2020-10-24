@@ -24,16 +24,16 @@ export const BookList = (props) => (
       <TextField source="name" />
       <NumberField source="wordCount" />
       <ReferenceField source="authorId" reference="author">
-        <TextField source="name" />
+        <TextField style={{ color: "#5c74ff" }} source="name" />
       </ReferenceField>
       <ReferenceField source="universeId" reference="universe">
-        <TextField source="universeName" />
+        <TextField style={{ color: "#5c74ff" }} source="universeName" />
       </ReferenceField>
       <ReferenceField source="seriesId" reference="series">
-        <TextField source="seriesName" />
+        <TextField style={{ color: "#5c74ff" }} source="seriesName" />
       </ReferenceField>
       <ReferenceField source="genreId" reference="genre">
-        <TextField source="genreName" />
+        <TextField style={{ color: "#5c74ff" }} source="genreName" />
       </ReferenceField>
       <TextField source="releaseDate" />
     </Datagrid>
