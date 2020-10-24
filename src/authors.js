@@ -7,7 +7,6 @@ import {
   Create,
   SimpleForm,
   TextInput,
-  ImageInput,
   ImageField,
   SimpleList,
   EditButton,

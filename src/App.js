@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
+import { Admin, Resource } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
 import {
@@ -13,6 +13,7 @@ import {
 import { BookList, BookEdit, BookCreate } from "./books";
 import { AuthorList, AuthorEdit, AuthorCreate } from "./authors";
 import { createMuiTheme } from "@material-ui/core";
+import loginPage from "./pages/login";
 import authConfig from "./authConfig.json";
 import { SeriesEdit, SeriesCreate } from "./series";
 
@@ -46,6 +47,7 @@ function App() {
       )}
       authProvider={authProvider}
       theme={theme}
+      loginPage={loginPage}
     >
       <Resource
         name="author"
