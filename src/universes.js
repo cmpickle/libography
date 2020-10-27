@@ -1,35 +1,35 @@
 import * as React from "react";
 import {
-  Create,
-  Edit,
-  SimpleForm,
-  TextInput,
   List,
   Datagrid,
   TextField,
+  Edit,
+  SimpleForm,
+  TextInput,
+  Create,
 } from "react-admin";
 
-export const SeriesList = (props) => (
+export const UniverseList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
-      <TextField source="seriesName" />
+      <TextField source="universeName" />
     </Datagrid>
   </List>
 );
 
-export const SeriesEdit = (props) => (
+export const UniverseEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
-      <TextInput source="seriesName" />
+      <TextInput source="universeName" />
     </SimpleForm>
   </Edit>
 );
 
-export const SeriesCreate = (props) => (
+export const UniverseCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="seriesName" />
+      <TextInput source="universeName" />
     </SimpleForm>
   </Create>
 );

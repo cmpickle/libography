@@ -8,7 +8,6 @@ import {
   SimpleForm,
   TextInput,
   ImageField,
-  SimpleList,
   EditButton,
 } from "react-admin";
 import { ListAvatar } from "./components/ListAvatar";
