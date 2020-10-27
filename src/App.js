@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
 import {
