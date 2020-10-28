@@ -7,12 +7,25 @@ import {
   List,
   Datagrid,
   TextField,
+  FunctionField,
+  ReferenceManyField,
+  SingleFieldList,
+  ChipField,
+  NumberField,
 } from "react-admin";
+import { WordCountField } from "./components/WordCountField";
 
 export const SeriesList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="seriesName" />
+      <ReferenceManyField
+        label="Word Count"
+        target="seriesId"
+        reference="books"
+      >
+        <WordCountField />
+      </ReferenceManyField>
     </Datagrid>
   </List>
 );

@@ -9,8 +9,11 @@ import {
   TextInput,
   ImageField,
   EditButton,
+  NumberField,
+  ReferenceManyField,
 } from "react-admin";
 import { ListAvatar } from "./components/ListAvatar";
+import { WordCountField } from "./components/WordCountField";
 
 export const AuthorList = (props) => {
   return (
@@ -18,6 +21,13 @@ export const AuthorList = (props) => {
       <Datagrid rowClick={authorsRowClick}>
         <ListAvatar source="picture" />
         <TextField source="name" />
+        <ReferenceManyField
+          label="Word Count"
+          target="authorId"
+          reference="books"
+        >
+          <WordCountField />
+        </ReferenceManyField>
         <EditButton />
       </Datagrid>
     </List>
