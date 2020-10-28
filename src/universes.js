@@ -7,12 +7,21 @@ import {
   SimpleForm,
   TextInput,
   Create,
+  ReferenceManyField,
 } from "react-admin";
+import { WordCountField } from "./components/WordCountField";
 
 export const UniverseList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="universeName" />
+      <ReferenceManyField
+        label="Word Count"
+        target="universeId"
+        reference="books"
+      >
+        <WordCountField />
+      </ReferenceManyField>
     </Datagrid>
   </List>
 );
