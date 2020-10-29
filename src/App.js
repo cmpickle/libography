@@ -40,10 +40,6 @@ const headers = {
 };
 
 function App() {
-  console.log(
-    "process.env.REACT_APP_HASURA_ADMIN_SECRET",
-    process.env.REACT_APP_HASURA_ADMIN_SECRET
-  );
   return (
     <Admin
       dataProvider={hasuraDataProvider(
