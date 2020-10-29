@@ -1,27 +1,23 @@
 import * as React from "react";
 import {
-  Create,
-  Edit,
-  SimpleForm,
-  TextInput,
   List,
   Datagrid,
   TextField,
-  FunctionField,
+  Edit,
+  SimpleForm,
+  TextInput,
+  Create,
   ReferenceManyField,
-  SingleFieldList,
-  ChipField,
-  NumberField,
 } from "react-admin";
 import { WordCountField } from "./components/WordCountField";
 
-export const SeriesList = (props) => (
+export const UniverseList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
-      <TextField source="seriesName" />
+      <TextField source="universeName" />
       <ReferenceManyField
         label="Word Count"
-        target="seriesId"
+        target="universeId"
         reference="books"
       >
         <WordCountField />
@@ -30,19 +26,19 @@ export const SeriesList = (props) => (
   </List>
 );
 
-export const SeriesEdit = (props) => (
+export const UniverseEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
-      <TextInput source="seriesName" />
+      <TextInput source="universeName" />
     </SimpleForm>
   </Edit>
 );
 
-export const SeriesCreate = (props) => (
+export const UniverseCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="seriesName" />
+      <TextInput source="universeName" />
     </SimpleForm>
   </Create>
 );

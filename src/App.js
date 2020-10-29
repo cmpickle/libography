@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
+import { Admin, Resource } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
 import {
@@ -14,7 +14,9 @@ import { BookList, BookEdit, BookCreate } from "./books";
 import { AuthorList, AuthorEdit, AuthorCreate } from "./authors";
 import { createMuiTheme } from "@material-ui/core";
 import loginPage from "./pages/login";
-import { SeriesEdit, SeriesCreate } from "./series";
+import { SeriesEdit, SeriesCreate, SeriesList } from "./series";
+import { GenreList, GenreEdit, GenreCreate } from "./genres";
+import { UniverseList, UniverseEdit, UniverseCreate } from "./universes";
 
 const theme = createMuiTheme({
   palette: {
@@ -71,23 +73,23 @@ function App() {
       <Resource
         name="genre"
         icon={Category}
-        list={ListGuesser}
-        edit={SeriesEdit}
-        create={SeriesCreate}
+        list={GenreList}
+        edit={GenreEdit}
+        create={GenreCreate}
       />
       <Resource
         name="series"
         icon={CollectionsBookmark}
-        list={ListGuesser}
+        list={SeriesList}
         edit={SeriesEdit}
         create={SeriesCreate}
       />
       <Resource
         name="universe"
         icon={Collections}
-        list={ListGuesser}
-        edit={EditGuesser}
-        create={EditGuesser}
+        list={UniverseList}
+        edit={UniverseEdit}
+        create={UniverseCreate}
       />
       <Resource name="user" />
     </Admin>
