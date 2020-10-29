@@ -1,10 +1,9 @@
-import authConfig from "./authConfig";
 import { Auth0Client } from "@auth0/auth0-spa-js";
 
 const auth0 = new Auth0Client({
-  domain: authConfig.domain,
-  client_id: authConfig.clientID,
-  redirect_uri: authConfig.redirectURI,
+  domain: process.env.REACT_APP_LIBOGRAPHY_DOMAIN,
+  client_id: process.env.REACT_APP_LIBOGRAPHY_CLIENT_ID,
+  redirect_uri: process.env.REACT_APP_LIBOGRAPHY_REDIRECT_URI,
   cacheLocation: "localstorage",
   useRefreshTokens: true,
 });
