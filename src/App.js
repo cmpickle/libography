@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
 import {
@@ -14,7 +14,6 @@ import { BookList, BookEdit, BookCreate } from "./books";
 import { AuthorList, AuthorEdit, AuthorCreate } from "./authors";
 import { createMuiTheme } from "@material-ui/core";
 import loginPage from "./pages/login";
-import authConfig from "./authConfig.json";
 import { SeriesEdit, SeriesCreate } from "./series";
 
 const theme = createMuiTheme({
@@ -35,10 +34,14 @@ const theme = createMuiTheme({
 const headers = {
   "content-type": "application/json",
   authorization: "bearer <token>",
-  "X-Hasura-Admin-Secret": authConfig.hasuraAdminSecret,
+  "X-Hasura-Admin-Secret": process.env.REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET,
 };
 
 function App() {
+  console.log(
+    "process.env.REACT_APP_HASURA_ADMIN_SECRET",
+    process.env.REACT_APP_HASURA_ADMIN_SECRET
+  );
   return (
     <Admin
       dataProvider={hasuraDataProvider(
