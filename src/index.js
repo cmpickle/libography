@@ -8,7 +8,7 @@ console.log(
   "hasura secret",
   process.env.REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET
 );
-console.log("domain", process.env.REACT_APP_LIBOGRPAHY_AUTH_DOMAIN);
+console.log("domain", process.env.REACT_APP_LIBOGRAPHY_AUTH_DOMAIN);
 console.log("redirect uri", process.env.REACT_APP_LIBOGRAPHY_REDIRECT_URI);
 console.log("client id", process.env.REACT_APP_LIBOGRAPHY_CLIENT_ID);
 
