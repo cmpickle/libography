@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
 export const ListAvatar = (props) => {
   const style = useStyles();
   return (
-    <ListItemAvatar source="picture">
-      <Avatar className={style.avatar} src={props.record.picture} />
+    <ListItemAvatar source={props.source}>
+      <Avatar className={style.avatar} src={props.record[props.source]} />
     </ListItemAvatar>
   );
 };
