@@ -10,6 +10,9 @@ import {
   ImageField,
   FunctionField,
   ReferenceManyField,
+  ReferenceInput,
+  SelectInput,
+  ReferenceField,
   SingleFieldList,
   ChipField,
   NumberField,
@@ -29,7 +32,9 @@ export const SeriesList = (props) => (
       >
         <WordCountField />
       </ReferenceManyField>
-
+      <ReferenceField source="authorId" reference="author">
+        <TextField style={{ color: "#5c74ff" }} source="name" />
+      </ReferenceField>
     </Datagrid>
   </List>
 );
@@ -41,6 +46,9 @@ export const SeriesEdit = (props) => (
       <TextInput source="seriesName" />
       <ImageField source="seriesImage" />
       <TextInput source="seriesImage" />
+      <ReferenceInput source="authorId" reference="author">
+        <SelectInput optionText="name" />
+      </ReferenceInput>
     </SimpleForm>
   </Edit>
 );
@@ -51,6 +59,9 @@ export const SeriesCreate = (props) => (
       <TextInput source="seriesName" />
       <ImageField source="seriesImage" />
       <TextInput source="seriesImage" />
+      <ReferenceInput source="authorId" reference="author">
+        <SelectInput optionText="name" />
+      </ReferenceInput>
     </SimpleForm>
   </Create>
 );
