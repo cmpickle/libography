@@ -36,6 +36,7 @@ export const BookList = (props) => (
         <TextField style={{ color: "#5c74ff" }} source="genreName" />
       </ReferenceField>
       <TextField source="releaseDate" />
+      <TextField source="seriesOrder" />
     </Datagrid>
   </List>
 );
@@ -67,6 +68,7 @@ export const BookEdit = (props) => (
       <ReferenceInput source="genreId" reference="genre">
         <SelectInput optionText="genreName" />
       </ReferenceInput>
+      <TextInput source="seriesOrder" />
     </SimpleForm>
   </Edit>
 );
@@ -92,6 +94,7 @@ export const BookCreate = (props) => (
       <ReferenceInput source="genreId" reference="genre">
         <SelectInput optionText="genreName" />
       </ReferenceInput>
+      <TextInput source="seriesOrder" />
     </SimpleForm>
   </Create>
 );
