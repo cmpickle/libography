@@ -5,6 +5,9 @@ import {
   TextField,
   Edit,
   SimpleForm,
+  ReferenceField,
+  SelectInput,
+  ReferenceInput,
   TextInput,
   ImageField,
   Create,
@@ -25,6 +28,9 @@ export const UniverseList = (props) => (
       >
         <WordCountField />
       </ReferenceManyField>
+      <ReferenceField source="authorId" reference="author">
+        <TextField style={{ color: "#5c74ff" }} source="name" />
+      </ReferenceField>
     </Datagrid>
   </List>
 );
@@ -36,6 +42,9 @@ export const UniverseEdit = (props) => (
       <TextInput source="universeName" />
       <ImageField source="universeImage" />
       <TextInput source="universeImage" />
+      <ReferenceInput source="authorId" reference="author">
+        <SelectInput optionText="name" />
+      </ReferenceInput>
     </SimpleForm>
   </Edit>
 );
@@ -46,6 +55,9 @@ export const UniverseCreate = (props) => (
       <TextInput source="universeName" />
       <ImageField source="universeImage" />
       <TextInput source="universeImage" />
+      <ReferenceInput source="authorId" reference="author">
+        <SelectInput optionText="name" />
+      </ReferenceInput>
     </SimpleForm>
   </Create>
 );
