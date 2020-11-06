@@ -25,6 +25,7 @@ export const AuthorList = (props) => {
           label="Word Count"
           target="authorId"
           reference="books"
+          sortable={false}
         >
           <WordCountField />
         </ReferenceManyField>
