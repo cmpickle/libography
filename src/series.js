@@ -17,18 +17,19 @@ import {
   ChipField,
   NumberField,
 } from "react-admin";
-import { ListAvatar } from './components/ListAvatar';
+import { ListAvatar } from "./components/ListAvatar";
 import { WordCountField } from "./components/WordCountField";
 
 export const SeriesList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
-      <ListAvatar source='seriesImage' />
+      <ListAvatar source="seriesImage" />
       <TextField source="seriesName" />
       <ReferenceManyField
         label="Word Count"
         target="seriesId"
         reference="books"
+        sortable={false}
       >
         <WordCountField />
       </ReferenceManyField>

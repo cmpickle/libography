@@ -18,21 +18,37 @@ import {
 import { ListAvatar } from "./components/ListAvatar";
 
 export const BookList = (props) => (
-  <List {...props} filters={<BookFilter />}>
+  <List
+    {...props}
+    sort={{ field: "author.name", order: "ASC" }}
+    filters={<BookFilter />}
+  >
     <Datagrid rowClick="edit">
       <ListAvatar source="picture" />
       <TextField source="name" />
       <NumberField source="wordCount" />
-      <ReferenceField source="authorId" reference="author">
+      <ReferenceField source="authorId" sortBy="author.name" reference="author">
         <TextField style={{ color: "#5c74ff" }} source="name" />
       </ReferenceField>
-      <ReferenceField source="universeId" reference="universe">
+      <ReferenceField
+        source="universeId"
+        sortBy="universe.universeName"
+        reference="universe"
+      >
         <TextField style={{ color: "#5c74ff" }} source="universeName" />
       </ReferenceField>
-      <ReferenceField source="seriesId" reference="series">
+      <ReferenceField
+        source="seriesId"
+        sortBy="series.seriesName"
+        reference="series"
+      >
         <TextField style={{ color: "#5c74ff" }} source="seriesName" />
       </ReferenceField>
-      <ReferenceField source="genreId" reference="genre">
+      <ReferenceField
+        source="genreId"
+        sortBy="genre.genreName"
+        reference="genre"
+      >
         <TextField style={{ color: "#5c74ff" }} source="genreName" />
       </ReferenceField>
       <TextField source="releaseDate" />

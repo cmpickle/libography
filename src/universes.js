@@ -13,7 +13,7 @@ import {
   Create,
   ReferenceManyField,
 } from "react-admin";
-import { ListAvatar } from './components/ListAvatar';
+import { ListAvatar } from "./components/ListAvatar";
 import { WordCountField } from "./components/WordCountField";
 
 export const UniverseList = (props) => (
@@ -25,6 +25,7 @@ export const UniverseList = (props) => (
         label="Word Count"
         target="universeId"
         reference="books"
+        sortable={false}
       >
         <WordCountField />
       </ReferenceManyField>
