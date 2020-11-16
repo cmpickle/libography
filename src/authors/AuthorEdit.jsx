@@ -6,10 +6,6 @@ export const AuthorEdit = (props) => (
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
-      {/* <ImageInput
-                source="picture">
-                <ImageField source="src" title="title" />
-            </ImageInput> */}
       <ImageField source="picture" />
       <TextInput source="picture" />
     </SimpleForm>
