@@ -14,6 +14,7 @@ import {
   SelectInput,
   ImageField,
   Filter,
+  AutocompleteInput,
 } from "react-admin";
 import { ListAvatar } from "./components/ListAvatar";
 
@@ -71,18 +72,18 @@ export const BookEdit = (props) => (
       <ImageField source="picture" />
       <TextInput source="picture" />
       <ReferenceInput source="authorId" reference="author">
-        <SelectInput optionText="name" />
+        <AutocompleteInput optionText="name" />
       </ReferenceInput>
       <NumberInput source="wordCount" />
-      <ReferenceInput source="universeId" reference="universe">
-        <SelectInput optionText="universeName" />
+      <ReferenceInput allowEmpty source="universeId" reference="universe">
+        <AutocompleteInput optionText="universeName" />
       </ReferenceInput>
       <ReferenceInput source="seriesId" reference="series">
-        <SelectInput optionText="seriesName" />
+        <AutocompleteInput allowEmpty optionText="seriesName" />
       </ReferenceInput>
       <TextInput source="releaseDate" />
       <ReferenceInput source="genreId" reference="genre">
-        <SelectInput optionText="genreName" />
+        <AutocompleteInput allowEmpty optionText="genreName" />
       </ReferenceInput>
       <TextInput source="seriesOrder" />
     </SimpleForm>
@@ -97,18 +98,18 @@ export const BookCreate = (props) => (
       <ImageField source="picture" />
       <TextInput source="picture" />
       <ReferenceInput source="authorId" reference="author">
-        <SelectInput optionText="name" />
+        <AutocompleteInput optionText="name" />
       </ReferenceInput>
       <NumberInput source="wordCount" />
       <ReferenceInput source="universeId" reference="universe">
-        <SelectInput optionText="universeName" />
+        <AutocompleteInput allowEmpty optionText="universeName" />
       </ReferenceInput>
       <ReferenceInput source="seriesId" reference="series">
-        <SelectInput optionText="seriesName" />
+        <AutocompleteInput allowEmpty optionText="seriesName" />
       </ReferenceInput>
       <TextInput source="releaseDate" />
       <ReferenceInput source="genreId" reference="genre">
-        <SelectInput optionText="genreName" />
+        <AutocompleteInput allowEmpty optionText="genreName" />
       </ReferenceInput>
       <TextInput source="seriesOrder" />
     </SimpleForm>

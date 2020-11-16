@@ -1,9 +1,10 @@
 FROM node:10-alpine as builder
 ENV PORT 80
-ENV REACT_APP_LIBOGRAPHY_CLIENT_ID=clientId
-ENV REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET=hasuraSecret
+ENV REACT_APP_LIBOGRAPHY_CLIENT_ID=7M0BlH4yeYdW7PMLih3Fe7jXKv6oYSxW
+ENV REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET=J0urn3yB4D3st1nat10n
 ENV REACT_APP_LIBOGRAPHY_AUTH_DOMAIN=libography.us.auth0.com
 ENV REACT_APP_LIBOGRAPHY_REDIRECT_URI=https://libography.herokuapp.com/#/login
+ENV REACT_APP_LIBOGRAPHY_AUDIENCE=https://libography.herokuapp.com/callback
 
 # copy the package.json to install dependencies
 COPY package.json yarn.lock ./
