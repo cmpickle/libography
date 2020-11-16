@@ -3,20 +3,13 @@ import "./App.css";
 import { Admin, Resource } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
 import authProvider from "./authProvider";
-import {
-  Person,
-  Book,
-  Category,
-  CollectionsBookmark,
-  Collections,
-} from "@material-ui/icons";
-import { BookList, BookEdit, BookCreate } from "./books";
-import { AuthorList, AuthorEdit, AuthorCreate } from "./authors";
 import { createMuiTheme } from "@material-ui/core";
 import loginPage from "./pages/login";
-import { SeriesEdit, SeriesCreate, SeriesList } from "./series";
-import { GenreList, GenreEdit, GenreCreate } from "./genres";
-import { UniverseList, UniverseEdit, UniverseCreate } from "./universes";
+import authors from "./authors";
+import books from "./books";
+import genres from "./genres";
+import series from "./series";
+import universes from "./universes";
 
 const theme = createMuiTheme({
   palette: {
@@ -50,43 +43,11 @@ function App() {
       theme={theme}
       loginPage={loginPage}
     >
-      <Resource
-        name="author"
-        label="Authors"
-        icon={Person}
-        list={AuthorList}
-        edit={AuthorEdit}
-        create={AuthorCreate}
-      />
-      <Resource
-        name="books"
-        label="Books"
-        icon={Book}
-        list={BookList}
-        edit={BookEdit}
-        create={BookCreate}
-      />
-      <Resource
-        name="genre"
-        icon={Category}
-        list={GenreList}
-        edit={GenreEdit}
-        create={GenreCreate}
-      />
-      <Resource
-        name="series"
-        icon={CollectionsBookmark}
-        list={SeriesList}
-        edit={SeriesEdit}
-        create={SeriesCreate}
-      />
-      <Resource
-        name="universe"
-        icon={Collections}
-        list={UniverseList}
-        edit={UniverseEdit}
-        create={UniverseCreate}
-      />
+      <Resource {...authors} />
+      <Resource {...books} />
+      <Resource {...genres} />
+      <Resource {...series} />
+      <Resource {...universes} />
       <Resource name="user" />
     </Admin>
   );
