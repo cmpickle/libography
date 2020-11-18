@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Admin, Resource } from "react-admin";
 import hasuraDataProvider from "ra-data-hasura";
-import authProvider from "./authProvider";
+import authProvider, { auth0 } from "./authProvider";
 import { createMuiTheme } from "@material-ui/core";
 import loginPage from "./pages/login";
 import authors from "./authors";
@@ -26,13 +26,26 @@ const theme = createMuiTheme({
   },
 });
 
-const headers = {
-  "content-type": "application/json",
-  authorization: "bearer <token>",
-  "X-Hasura-Admin-Secret": process.env.REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET,
-};
-
 function App() {
+  const [token, setToken] = useState(undefined);
+  useEffect(() => {
+    async function fetchData() {
+      let token = undefined;
+      try {
+        token = await auth0.getTokenSilently();
+      } catch (err) {
+        console.error(err);
+      }
+      setToken(token);
+    }
+    fetchData();
+  }, []);
+
+  const headers = {
+    "content-type": "application/json",
+    authorization: `Bearer ${token}`,
+  };
+
   return (
     <Admin
       dataProvider={hasuraDataProvider(
