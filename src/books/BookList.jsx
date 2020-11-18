@@ -6,13 +6,29 @@ import {
   ReferenceField,
   TextField,
   TextInput,
+  ReferenceInput,
+  SelectInput,
   Filter,
 } from "react-admin";
 import { ListAvatar } from "../components/ListAvatar";
 
 const BookFilter = (props) => (
   <Filter {...props}>
-    <TextInput source="authorId" alwaysOn />
+    <ReferenceInput
+      label="Author"
+      source="authorId"
+      reference="author"
+      alwaysOn
+    >
+      <SelectInput allowEmpty optionText="name" />
+    </ReferenceInput>
+    {console.log(props)}
+    <ReferenceInput label="Series" source="seriesId" reference="series">
+      <SelectInput allowEmpty optionText="seriesName" />
+    </ReferenceInput>
+    <ReferenceInput label="Universe" source="universeId" reference="universe">
+      <SelectInput allowEmpty optionText="universeName" />
+    </ReferenceInput>
   </Filter>
 );
 
