@@ -4,6 +4,7 @@ ENV REACT_APP_LIBOGRAPHY_CLIENT_ID=clientId
 ENV REACT_APP_LIBOGRAPHY_HASURA_ADMIN_SECRET=hasuraSecret
 ENV REACT_APP_LIBOGRAPHY_AUTH_DOMAIN=libography.us.auth0.com
 ENV REACT_APP_LIBOGRAPHY_REDIRECT_URI=https://libography.herokuapp.com/#/login
+ENV REACT_APP_LIBOGRAPHY_AUDIENCE=https://libography.herokuapp.com/callback
 
 # copy the package.json to install dependencies
 COPY package.json yarn.lock ./
@@ -22,11 +23,6 @@ RUN yarn run build
 FROM nginx:alpine
 
 #!/bin/sh
-
-# RUN apk --no-cache add curl
-# RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.1.0/envsubst-`uname -s`-`uname -m` -o envsubst && \
-#     chmod +x envsubst && \
-#     mv envsubst /usr/local/bin
 
 COPY ./.nginx/nginx.conf /etc/nginx/conf.d/default.conf
 # RUN envsubst < "/etc/nginx/nginx.conf.temp" > "/etc/nginx/nginx.conf"
