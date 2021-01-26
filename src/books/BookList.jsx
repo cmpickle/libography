@@ -22,7 +22,6 @@ const BookFilter = (props) => (
     >
       <SelectInput allowEmpty optionText="name" />
     </ReferenceInput>
-    {console.log(props)}
     <ReferenceInput label="Series" source="seriesId" reference="series">
       <SelectInput allowEmpty optionText="seriesName" />
     </ReferenceInput>
